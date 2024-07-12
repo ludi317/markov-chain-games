@@ -24,7 +24,6 @@ class Game:
 
         # Add absorbing state
         self.P[self.n][self.n] = 1
-        print(self.P)
 
         # Q is the transition matrix without the absorbing state
         Q = self.P[:-1, :-1]
