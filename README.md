@@ -6,7 +6,7 @@ Players start off board and take turns spinning the spinner.
 Depending on the square landed on, the player will remain on the square, move forward if at the bottom of a ladder, or move backward if at the top of a chute.
 The winner of the game is the first player to reach the last square. Overshooting the last square results in the player staying on their current square.
 
-![chutes_and_ladders.jpg](chutes_and_ladders.jpg)
+![chutes_and_ladders.jpg](img/chutes_and_ladders.jpg)
 
 The game is exactly modeled as an absorbing Markov chain, since from any square the odds of moving to any other square are fixed and independent of previous moves.
 The game begins on square 0, representing the off-board state.
@@ -18,12 +18,12 @@ This repository uses the properties of Markov chains to calculate various statis
 * Variance of the number of moves to finish the game (674 moves from square 0)
 
 This graph shows the expected number of moves to finish the game when starting on each square. If the starting square is at the bottom of a ladder or top of a chute, then there is only one next possible move: take the ladder or chute.   
-![chutes_and_ladders_expected_moves.png](chutes_and_ladders_expected_moves.png)
+![chutes_and_ladders_expected_moves.png](img/chutes_and_ladders_expected_moves.png)
 
 On the back cover of the children's story *Curious George Goes to the Chocolate Factory*, is another such Markov chain game, but with 11 squares and a coin toss mapping to 1 or 2 squares forward.
-![curious_george.jpg](curious_george.jpg)
+![curious_george.jpg](img/curious_george.jpg)
 Here is its graph of the expected number of moves.
-![curious_george_expected_moves.png](curious_george_expected_moves.png)
+![curious_george_expected_moves.png](img/curious_george_expected_moves.png)
 ### References
 * https://en.wikipedia.org/wiki/Absorbing_Markov_chain
 * https://math.uchicago.edu/~may/REU2014/REUPapers/Hochman.pdf
