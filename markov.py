@@ -15,9 +15,9 @@ class Game:
         # Q matrix is the transition matrix without the final absorbing state
         # N matrix is the fundamental matrix, the expected number of times the chain is in state j given that it starts in state i
         for i in range(self.n):
-            # if i in self.jumps:
-            #     self.P[i][self.jumps[i]] = 1.0
-            #     continue
+            if i in self.jumps:
+                self.P[i][self.jumps[i]] = 1.0
+                continue
             for j in range(1, self.m + 1):
                 k = i if i + j > self.n else self.jumps.get(i + j, i + j)
                 self.P[i][k] += 1.0 / self.m
