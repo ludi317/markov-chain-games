@@ -16,6 +16,7 @@ This repository uses the properties of Markov chains to calculate various statis
 * Expected number of moves to finish the game (39.8593 moves from square 0)
 * Probability of finishing the game by a given number of moves (33 is the median)
 * Variance of the number of moves to finish the game (674 moves from square 0)
+* Minimum number of moves to finish the game (6 moves)
 
 This graph shows the expected number of moves to finish the game when starting on each square. If the starting square is at the bottom of a ladder or top of a chute, then there is only one next possible move: take the ladder or chute.   
 ![chutes_and_ladders_expected_moves.png](img/chutes_and_ladders_expected_moves.png)

@@ -8,19 +8,14 @@ chutes_and_ladders_jumps = {2: 19, 4: 14, 8: 31, 16: 6, 21: 42, 28: 84, 36: 44, 
 if __name__ == '__main__':
     Chutes_And_Ladders = Game("Chutes and Ladders", 100, 6, chutes_and_ladders_jumps)
     Curious_George = Game("Curious George", 11, 2, curious_george_jumps)
-    games = [
-        Chutes_And_Ladders,
-             Curious_George,
-             ]
+    games = [Chutes_And_Ladders, Curious_George]
     for game in games:
         print(game.name)
-        print("Expected number of moves to complete the game:")
-        print(game.expected_moves())
+        print("Expected number of moves to complete the game:", game.expected_moves()[0])
         game.plot_expected_moves()
-        print("Median number of moves to complete the game:")
-        print(game.median_moves())
-        print("Variance of the number of moves to complete the game:")
-        print(game.variance()[0])
+        print("Median number of moves to complete the game:", game.median_moves())
+        print("Minimum number of moves to complete the game:", game.min_moves())
+        print("Variance of the number of moves to complete the game:", game.variance()[0])
         print()
 
 

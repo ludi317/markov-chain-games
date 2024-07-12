@@ -33,8 +33,8 @@ class Game:
 
     # Expected number of moves to reach the end of the board
     def expected_moves(self):
-        # sum the first row of the N matrix
-        return np.sum(self.N[0])
+        # sum the rows of the N matrix
+        return np.sum(self.N, axis=1)
 
     def plot_expected_moves(self):
         t = np.dot(self.N, np.ones(self.n))
@@ -47,18 +47,11 @@ class Game:
         plt.show()
 
     def probability_of_completion(self, n_moves):
-        # Initial state distribution (starting at square 0)
-        initial_state = np.zeros(self.n + 1)
-        initial_state[0] = 1.0
-
         # Compute the n-step transition matrix
         Pn = np.linalg.matrix_power(self.P, n_moves)
 
-        # Probability distribution after n moves
-        final_distribution = np.dot(initial_state, Pn)
-
-        # Cumulative probability of reaching the final state by n moves
-        return final_distribution[self.n]
+        # The probability of transitioning from square 0 to the absorbing state in n moves
+        return Pn[0][self.n]
 
     def median_moves(self):
         # use binary search to find the median number of moves
@@ -67,6 +60,18 @@ class Game:
         while lo < hi:
             mid = (lo + hi) // 2
             if self.probability_of_completion(mid) < 0.5:
+                lo = mid + 1
+            else:
+                hi = mid
+        return lo
+
+    def min_moves(self):
+        # use binary search to find the minimum number of moves
+        lo = 0
+        hi = 1000
+        while lo < hi:
+            mid = (lo + hi) // 2
+            if self.probability_of_completion(mid) == 0:
                 lo = mid + 1
             else:
                 hi = mid
