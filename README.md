@@ -20,6 +20,8 @@ This repository uses the properties of Markov chains to calculate various statis
 This graph shows the expected number of moves to finish the game when starting on each square. If the starting square is at the bottom of a ladder or top of a chute, then there is only one next possible move: take the ladder or chute.   
 ![chutes_and_ladders_expected_moves.png](img/chutes_and_ladders_expected_moves.png)
 
+# Curious George
+
 On the back cover of the children's story *Curious George Goes to the Chocolate Factory*, is another such Markov chain game, but with 11 squares and a coin toss mapping to 1 or 2 squares forward.
 ![curious_george.jpg](img/curious_george.jpg)
 Here is its graph of the expected number of moves.
