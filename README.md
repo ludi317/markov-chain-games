@@ -11,20 +11,31 @@ The game begins on square 0, representing the off-board state.
 The final square is an absorbing state; once a player reaches it, they cannot leave.
 
 This repository uses the properties of Markov chains to calculate various statistics of a single-player game.
-* Expected number of moves to finish the game (39.8593 moves from square 0)
-* Probability of finishing the game by a given number of moves (33 is the median)
-* Standard deviation of the number of moves to finish the game (25.9649 moves from square 0)
-* Minimum number of moves to finish the game (6 moves)
+* Expected value of number of moves to win game: 39.8592604644135
+* Mode (most common number of moves that wins a game): 22
+* Median (50% of games finish by this number of moves): 33
+* Minimum (the smallest number of moves that can win): 6
+* Standard deviation: 25.96486891240239
 
+## Graphs
+### Expected Number of Moves Per Starting Square
 This graph shows the expected number of moves to finish the game when starting on each square. 
 If the starting square is at the bottom of a ladder or the top of a chute, the only possible next move is to take the ladder or chute.
+For example, the 80 square is at the bottom of a ladder to square 100, so its expected number of moves to finish the game is 1.
 ![chutes_and_ladders_expected_moves.png](img/chutes_and_ladders_expected_moves.png)
+
+### Probability of Winning At Nth Move
+![chutes_and_ladders_pmf.png](img%2Fchutes_and_ladders_pmf.png)
+
+### Probability of Winning By Nth Move
+This is just the integral of the previous graph.
+![chutes_and_ladders_cmf.png](img%2Fchutes_and_ladders_cmf.png)
 
 # Curious George
 
 On the back cover of the children's story *Curious George Goes to the Chocolate Factory*, is another such Markov chain game, but with 11 squares and a coin toss mapping to 1 or 2 squares forward.
 ![curious_george.jpg](img/curious_george.jpg)
-Here is its graph of the expected number of moves. The expected number of moves to finish the game is only 5, and the game could be finished in as few as 3 moves.
+Here is its graph of the expected number of moves to win per square. Square 6 takes you back to the beginning, so its expected number of moves is 1 more than square 0's.
 ![curious_george_expected_moves.png](img/curious_george_expected_moves.png)
 ### References
 * https://en.wikipedia.org/wiki/Absorbing_Markov_chain
