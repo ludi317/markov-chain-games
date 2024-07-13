@@ -13,7 +13,7 @@ The final square is an absorbing state; once a player reaches it, they cannot le
 This repository uses the properties of Markov chains to calculate various statistics of a single-player game.
 * Expected number of moves to finish the game (39.8593 moves from square 0)
 * Probability of finishing the game by a given number of moves (33 is the median)
-* Variance of the number of moves to finish the game (674 moves from square 0)
+* Standard deviation of the number of moves to finish the game (25.9649 moves from square 0)
 * Minimum number of moves to finish the game (6 moves)
 
 This graph shows the expected number of moves to finish the game when starting on each square. 

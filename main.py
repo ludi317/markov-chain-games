@@ -15,7 +15,7 @@ if __name__ == '__main__':
         game.plot_expected_moves()
         print("Median number of moves to complete the game:", game.median_moves())
         print("Minimum number of moves to complete the game:", game.min_moves())
-        print("Variance of the number of moves to complete the game:", game.variance()[0])
+        print("Standard deviation of the number of moves to complete the game:", game.std_dev()[0])
         print()
 
 

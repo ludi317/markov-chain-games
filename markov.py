@@ -84,6 +84,9 @@ class Game:
         variance = np.dot(2 * self.N - np.eye(self.n), t) - t_squared
         return variance
 
+    def std_dev(self):
+        return np.sqrt(self.variance())
+
     def plot_variance(self):
         variance = self.variance()
         plt.plot(variance)
