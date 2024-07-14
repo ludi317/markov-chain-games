@@ -77,12 +77,12 @@ class Game:
         # plot bar graph
         plt.bar(range(self.upper_bound), prob)
         median = self.median_moves()
-        expected = self.expected_moves()[0]
+        mean = self.expected_moves()[0]
         mode = self.mode_moves()
-        plt.axvline(x=expected, color='g', linestyle='--', label='Expected')
+        plt.axvline(x=mean, color='g', linestyle='--', label='Mean')
+        plt.axvline(x=median, color='r', linestyle='--', label='Median')
         for m in mode:
             plt.axvline(x=m, color='b', linestyle='--', label='Mode')
-        plt.axvline(x=median, color='r', linestyle='--', label='Median')
         plt.xlabel('Number of moves')
         plt.ylabel('Probability of completion at n moves')
         plt.title("Probability of Winning " + self.name)

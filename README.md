@@ -11,15 +11,15 @@ The game begins on square 0, representing the off-board state.
 The final square is an absorbing state; once a player reaches it, they cannot leave.
 
 This repository uses the properties of Markov chains to calculate various statistics of a single-player game.
-* Expected value of number of moves to win game: 39.8592604644135
-* Mode (most common number of moves that wins a game): 22
+* Mean number of moves to win game: 39.8592604644135
 * Median (50% of games finish by this number of moves): 33
+* Mode (most common number of moves that wins a game): 22
 * Minimum (the smallest number of moves that can win): 6
 * Standard deviation: 25.96486891240239
 
 ## Graphs
 ### Expected Number of Moves Per Starting Square
-This graph shows the expected number of moves to finish the game when starting on each square. 
+This graph shows the expected value of the number of moves to finish the game when starting on each square. 
 If the starting square is at the bottom of a ladder or the top of a chute, the only possible next move is to take the ladder or chute.
 For example, the 80 square is at the bottom of a ladder to square 100, so its expected number of moves to finish the game is 1.
 ![chutes_and_ladders_expected_moves.png](img/chutes_and_ladders_expected_moves.png)

@@ -11,9 +11,9 @@ if __name__ == '__main__':
     games = [Chutes_And_Ladders, Curious_George]
     for game in games:
         print(game.name)
-        print("Expected value:", game.expected_moves()[0])
-        print("Mode:", game.mode_moves())
+        print("Mean:", game.expected_moves()[0])
         print("Median:", game.median_moves())
+        print("Mode:", game.mode_moves())
         print("Minimum:", game.min_moves())
         print("Standard deviation:", game.std_dev()[0])
         game.plot_expected_moves()
