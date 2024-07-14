@@ -25,7 +25,7 @@ For example, the 80 square is at the bottom of a ladder to square 100, so its ex
 ![chutes_and_ladders_expected_moves.png](img/chutes_and_ladders_expected_moves.png)
 
 ### Probability of Winning At Nth Move
-![chutes_and_ladders_pmf.png](img%2Fchutes_and_ladders_pmf.png)
+![chutes_and_ladders_pmf.png](img%2Fchutes_and_ladders_pmf.png?)
 
 ### Probability of Winning By Nth Move
 This is just the integral of the previous graph.
