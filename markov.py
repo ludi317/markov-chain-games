@@ -69,7 +69,9 @@ class Game:
     def probability_of_completion_at(self, n_moves):
         if n_moves == 0:
             return 0
-        return self.probability_of_completion_by(n_moves) - self.probability_of_completion_by(n_moves - 1)
+        Pn_minus_1 = np.linalg.matrix_power(self.P, n_moves - 1)
+        Pn = np.dot(Pn_minus_1, self.P)
+        return Pn[0][self.n] - Pn_minus_1[0][self.n]
 
     # Plot the probability mass function (pmf)
     def plot_pmf(self):
